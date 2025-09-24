@@ -1,4 +1,4 @@
-import { Stat } from "../types";
+import { Stat, Data } from "../types";
 
 interface QuickStatsProps {
   stats: Stat;
@@ -61,6 +61,15 @@ export default function QuickStat({ stats }: QuickStatsProps) {
           hrs
         </p>
       </div>
+
+      <hr className="border-slate-200" />
+
+      {stats.data.categories.map((category: Data, index) => (
+        <div key={index}>
+          <p className="text-sm text-slate-500">{category.name}</p>
+          <p className="text-2xl font-bold">{category.text}</p>
+        </div>
+      ))}
     </aside>
   );
 }

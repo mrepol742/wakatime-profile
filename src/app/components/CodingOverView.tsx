@@ -23,7 +23,7 @@ export default function CodingOverview({
         </div>
       </div>
       <div className="mt-6 grid grid-cols-2 gap-3">
-        {topLanguages.slice(0, 10).map((lang) => (
+        {topLanguages.slice(0, 14).map((lang) => (
           <div key={lang.name} className="p-3 bg-slate-50 rounded-lg">
             <p className="text-sm text-slate-500">{lang.name}</p>
             <p className="font-semibold">

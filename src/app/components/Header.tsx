@@ -30,20 +30,24 @@ export default function Header({ user }: HeaderProps) {
             "Full-stack developer • Open-source • Coffee enthusiast"}
         </p>
 
-        <div className="flex items-center mt-3 text-slate-700 text-sm">
-          <MapPin className="w-4 h-4" />
-          <span className="ml-2">{user.data.city.title}</span>
-        </div>
+        {user.data.city && (
+          <div className="flex items-center mt-3 text-slate-700 text-sm">
+            <MapPin className="w-4 h-4" />
+            <span className="ml-2">{user.data.city.title}</span>
+          </div>
+        )}
 
-        <Link
-          className="flex items-center mt-3 text-slate-700 text-sm hover:underline"
-          href={user.data.website}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <LinkIcon className="w-4 h-4" />
-          <span className="ml-2 truncate">{user.data.website}</span>
-        </Link>
+        {user.data.website && (
+          <Link
+            className="flex items-center mt-3 text-slate-700 text-sm hover:underline"
+            href={user.data.website}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <LinkIcon className="w-4 h-4" />
+            <span className="ml-2 truncate">{user.data.website}</span>
+          </Link>
+        )}
       </div>
     </header>
   );
