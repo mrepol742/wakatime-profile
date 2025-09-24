@@ -7,7 +7,6 @@ interface QuickStatsProps {
 export default function QuickStat({ stats }: QuickStatsProps) {
   return (
     <aside className="p-6 bg-white rounded-2xl shadow-sm space-y-6">
-
       <div>
         <h3 className="text-lg font-semibold mb-3">Quick stats</h3>
         <ul className="space-y-2 text-sm">
@@ -26,9 +25,15 @@ export default function QuickStat({ stats }: QuickStatsProps) {
           <li className="flex justify-between">
             <span className="text-slate-500">Operating systems</span>
             <span className="font-medium truncate ml-2">
-              {stats.data.operating_systems
-                .map((os) => os.name)
-                .join(", ") || "—"}
+              {stats.data.operating_systems.map((os) => os.name).join(", ") ||
+                "—"}
+            </span>
+          </li>
+          <li className="flex justify-between">
+            <span className="text-slate-500">Machines</span>
+            <span className="font-medium truncate ml-2">
+              {stats.data.machines.map((machine) => machine.name).join(", ") ||
+                "—"}
             </span>
           </li>
         </ul>
@@ -48,13 +53,13 @@ export default function QuickStat({ stats }: QuickStatsProps) {
 
       <div>
         <h3 className="text-lg font-semibold mb-2">Daily average</h3>
+        <p className="text-sm text-slate-500">per day</p>
         <p className="text-2xl font-bold">
           {(stats.data.daily_average_including_other_language / 3600).toFixed(
-            1
+            1,
           )}{" "}
           hrs
         </p>
-        <p className="text-sm text-slate-500">per day</p>
       </div>
     </aside>
   );

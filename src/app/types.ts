@@ -34,6 +34,7 @@ export interface Stat {
     operating_systems: Data[];
     languages: Data[];
     categories: Data[];
+    machines: Data[];
     total_seconds: number;
     best_day: {
       date: string;
