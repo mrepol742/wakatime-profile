@@ -24,6 +24,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        <meta name="hostname" content="wakatime.melvinjonesrepol.com" />
+        <link rel="canonical" href="https://wakatime.melvinjonesrepol.com" />
+      </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
