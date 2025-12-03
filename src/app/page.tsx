@@ -3,6 +3,7 @@ import CodingOverview from "./components/CodingOverView";
 import { User, Stat } from "./types";
 import QuickStat from "./components/QuickStats";
 import Footer from "./components/Footer";
+import "devicon/devicon.min.css";
 
 async function getData() {
   const apiKey = process.env.WAKATIME_API_KEY;
