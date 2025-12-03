@@ -10,12 +10,12 @@ async function getData() {
 
   const userRes = await fetch(
     `https://wakatime.com/api/v1/users/current?api_key=${apiKey}`,
-    { next: { revalidate: 86400 } },
+    { next: { revalidate: 10800 } }, // 3 hours
   );
 
   const statsRes = await fetch(
     `https://wakatime.com/api/v1/users/current/stats/last_7_days?api_key=${apiKey}`,
-    { next: { revalidate: 86400 } },
+    { next: { revalidate: 10800 } },
   );
 
   if (!userRes.ok) {
